@@ -1,7 +1,7 @@
 ﻿
 namespace DataAcceso
 {
-    public class GestionBancoData : IRegistroMontos
+    public class GestionBancoData : IRegistroTransacciones
     {
         public List<string> registro { get; set; }
 
@@ -13,20 +13,25 @@ namespace DataAcceso
 
 
         // metodo para agregar monto depositados a una lista
-        public void AgregarRegistroDeposito(int monto)
+        public void AgregarRegistro(int monto)
         {
             registro.Add($"{monto}");
         }
 
-        //metodo para mostrar esa lista
+
+        //metodo para mostrar historial de depositos
         public List<string> obtenerRegistro()
         {
-            Console.WriteLine("Historial de montos depositados");
-            foreach (var montos in registro)
+            Console.WriteLine("------Historial de Transacciones-------");
+            foreach (var transacciones in registro)
             {
-                Console.WriteLine(montos);
+                Console.WriteLine($"* {transacciones}");
             }
             return registro;
         }
+
+        
+
+       
     }
 }

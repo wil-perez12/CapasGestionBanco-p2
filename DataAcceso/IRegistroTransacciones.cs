@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataAcceso
 {
-    interface IRegistroMontos
+    interface IRegistroTransacciones
     {
-        void  AgregarRegistroDeposito(int monto);
+        void  AgregarRegistro(int monto);
         List<string> obtenerRegistro();
+
     }
 }
